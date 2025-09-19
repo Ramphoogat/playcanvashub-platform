@@ -1,0 +1,6 @@
+CREATE TABLE profiles (
+  user_id BIGINT PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  bio TEXT,
+  links_json JSONB DEFAULT '{}',
+  updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
